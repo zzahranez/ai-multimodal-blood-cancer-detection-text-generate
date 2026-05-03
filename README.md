@@ -44,7 +44,6 @@ data_test/ # Sample images
 ### Backend (FastAPI)
 ```bash
 cd app/backend
-pip install -r requirements.txt
 uvicorn main:app --reload
 
 
