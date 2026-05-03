@@ -1,59 +1,111 @@
-# 🩸 AI Multimodal Blood Cancer Detection
+# AI Multimodal Blood Cancer Detection
 
+<<<<<<< HEAD
 > **YOLO + GPT-2** | Multimodal AI for blood cancer detection and automated medical report generation
 
 [![YOLO](https://img.shields.io/badge/YOLO-v11-blue)](https://github.com/ultralytics/ultralytics)
 [![GPT-2](https://img.shields.io/badge/GPT-2-green)](https://github.com/openai/gpt-2)
+=======
+[![YOLO](https://img.shields.io/badge/YOLO-v11n-blue)](https://github.com/ultralytics/ultralytics)
+[![GPT-2](https://img.shields.io/badge/GPT-2-Small--Indonesian-green)](https://huggingface.co/flax-community/gpt2-small-indonesian)
+[![LoRA](https://img.shields.io/badge/LoRA-PEFT-orange)](https://github.com/huggingface/peft)
+>>>>>>> a03264b349895e6e7c16209fa4fad2c89377c3d4
 [![FastAPI](https://img.shields.io/badge/FastAPI-blue)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-cyan)](https://tailwindcss.com/)
 
 ## 📋 Description
 
-This project uses **multimodal AI** (YOLO for vision + GPT-2 for language) to detect blood cancer cells from microscope images and automatically generate medical reports.
+Multimodal AI for blood cancer detection using **YOLO11n** (computer vision) + **GPT-2 Small Indonesian** (text generation) with **LoRA** fine-tuning.
 
 ### 5 Blood Cell Classes:
 
 | Class | Description |
 |-------|-------------|
-| 🟣 `myeloblast` | Key indicator of leukemia (AML) |
+| 🟣 `myeloblast` | Leukemia indicator (AML) |
 | 🔵 `seg_neutrophil` | Segmented neutrophil |
 | 🟡 `monocyte` | Monocyte |
 | 🟢 `basophil` | Basophil |
 | 🔴 `erythroblast` | Red blood cell precursor |
 
-## 🧠 Multimodal Architecture
+## 🧠 Models & Architecture
 
+| Component | Model |
+|-----------|-------|
+| **Computer Vision** | YOLO11n (Ultralytics) |
+| **Text Generation** | GPT-2 Small Indonesian (flax-community) |
+| **Fine-tuning** | LoRA (PEFT) |
+| **Backend** | FastAPI |
+| **Frontend** | React + TailwindCSS v4 |
+
+## 🔄 Multimodal Pipeline
+Input Image → YOLO11n → Cell Detection → Feature Extraction → GPT-2 (LoRA) → Medical Report
 ## 📁 Project Structure
-├── app/
-│ ├── backend/ # FastAPI backend
-│ └── frontend/ # React frontend
-├── training/
-│ ├── object-detection-yolo/ # YOLO training
-│ └── text-generation/ # GPT-2 fine-tuning
-└── data_test/ # Sample images
+```
+app/
+├── backend/
+│ ├── main.py # FastAPI entry point
+│ ├── models/ # YOLO & GPT-2 models
+│ ├── services/ # NLP service
+│ └── route/ # API routes
+└── frontend/
+├── src/ # React components
+└── vite.config.ts # Vite + TailwindCSS
 
+training/
+├── object-detection-yolo/
+│ ├── data.yaml # 5 class dataset config
+│ ├── main.ipynb # YOLO11n training notebook
+│ └── runs/ # Training results
+└── text-generation/
+├── main.ipynb # GPT-2 LoRA fine-tuning notebook
+├── dataset_final.csv # Training data
+└── lora/ # LoRA weights
+
+data_test/ # Sample test images
+```
 
 ## 🚀 How to Run
 
-### Backend (FastAPI)
-```bash
+### 1. Backend (FastAPI)
+
+```
 cd app/backend
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
 
+### 2. FrontEnd (React)
+```
+cd app/frontend
+npm install
+npm run dev
+```
+
+### 3. Train YOLO11n
+```
+cd training/object-detection-yolo
+# Open main.ipynb in Jupyter/VS Code
+```
+
+### 4. Train GPT-2 with LoRA
+```
+cd training/text-generation
+# Open main.ipynb
+```
 
 📊 Sample Output
-Input: Microscope blood image
-Output: Detection of abnormal blast cells with medical recommendations
+Input: Blood microscope image
+Output: Abnormal blast cell detection report with medical recommendations (in Indonesian language)
 
 📝 Notes
-Dataset images not included in this repository (large files)
+Dataset images not included (large files)
 
-GPT-2 model (200MB) will be downloaded automatically when running
+Model weights stored separately
+
+GPT-2 base model auto-downloads from HuggingFace
 
 👩‍💻 Author
 zzahranez
 
 ⭐ Star this repo if you find it useful!
-
----
