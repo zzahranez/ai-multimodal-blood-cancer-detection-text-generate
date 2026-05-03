@@ -64,4 +64,5 @@ build/
 .vscode/
 .idea/
 .DS_Store
-Thumbs.db
+Thumbs.dbtraining/object-detection-yolo/dataset/
+training/object-detection-yolo/dataset/

@@ -2,7 +2,7 @@
 
 > **YOLO + GPT-2** | Multimodal AI for blood cancer detection and automated medical report generation
 
-[![YOLO](https://img.shields.io/badge/YOLO-v8-blue)](https://github.com/ultralytics/ultralytics)
+[![YOLO](https://img.shields.io/badge/YOLO-v11-blue)](https://github.com/ultralytics/ultralytics)
 [![GPT-2](https://img.shields.io/badge/GPT-2-green)](https://github.com/openai/gpt-2)
 [![FastAPI](https://img.shields.io/badge/FastAPI-blue)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
